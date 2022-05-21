@@ -2,5 +2,6 @@ let GameC;
 
 $( '#CONNECT-btn' ).click(()=>{
     let val = $('input[type="text"]#twitch-channel').val()
-    GameC = new GameController("val")
+    GameC = new GameController(val)
+    console.log("click", val)
 })
