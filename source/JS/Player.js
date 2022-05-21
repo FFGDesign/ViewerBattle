@@ -49,7 +49,14 @@ class Player {
         this.Field = FieldID
     }
 
-    TakeDamage(Damage) {
+    
+
+    draw() {
 
     }
+
+    update() {
+
+    }
+
 }

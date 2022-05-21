@@ -34,7 +34,7 @@ class GameController {
                     if (this.GameState !== "Play");
                     this.PlayerRoll(tags['display-name']);
                     break;
-                default: print("Unknow Command:" + command);
+                default: console.log("Unknow Command:" + command);
             }
         
             // console.log(`${tags['display-name']}: ${message}`);
