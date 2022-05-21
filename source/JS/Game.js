@@ -3,7 +3,7 @@ class GameController {
         if (!channel || channel === "") return;
 
         this.channel = channel.toLowerCase()
-        this.GameState = "Waiting";
+        this.GameState = "Traveling";
 
         this.Players = {};
         this.Queue = {};
@@ -20,7 +20,6 @@ class GameController {
             // Update UI
             $('input[type="text"][inp-id="twitch-channel"]').attr("disabled", true)
             $( '.btn[btn-id="Connect"]' ).attr("disabled", true)
-            $( '.btn[btn-id="Play"]' ).removeAttr("disabled")
             console.log('logged to channel: ' + this.channel)
         })
         
@@ -35,10 +34,6 @@ class GameController {
                 case 'join': 
                     this.AddPlayer(tags['display-name']);
                     break;
-                case 'roll': 
-                    if (this.GameState !== "Play");
-                    this.PlayerRoll(tags['display-name']);
-                    break;
                 default: console.log("Unknow Command:" + command);
             }
         
@@ -49,22 +44,7 @@ class GameController {
     AddPlayer(UserName) {
         if (this.Players[UserName]) return;
         this.Players[UserName] = new Player(UserName,0)
-    
-        this.Queue[Queue.lenght] = {
-            SkippedQueues: 0,
-            UserName: UserName
-        }
     }
 
-    
-    PlayerRoll(UserName) {
-        let plr = this.Players[UserName];
-
-        plr.RollTheDice()
-    }
-
-    play() {
-        anim()
-    }
 
 }
