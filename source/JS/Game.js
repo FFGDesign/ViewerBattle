@@ -1,5 +1,5 @@
 class GameController {
-    constructor(channel, Wait, Anim, display) {
+    constructor(channel) {
         if (!channel || channel === "") return;
 
         this.channel = channel.toLowerCase()
