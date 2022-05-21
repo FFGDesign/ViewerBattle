@@ -48,15 +48,4 @@ class Player {
         this.LastField = this.Field
         this.Field = FieldID
     }
-
-    
-
-    draw() {
-
-    }
-
-    update() {
-
-    }
-
 }

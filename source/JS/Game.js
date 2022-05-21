@@ -17,9 +17,14 @@ class GameController {
         client.connect();
 
         client.on("connected", (address, port) => {
+            // Update UI
+            $('input[type="text"][inp-id="twitch-channel"]').attr("disabled", true)
+            $( '.btn[btn-id="Connect"]' ).attr("disabled", true)
+            $( '.btn[btn-id="Play"]' ).removeAttr("disabled")
             console.log('logged to channel: ' + this.channel)
         })
         
+        // Messege Listener
         client.on('message', (channel, tags, message, self) => {
             if(self || !message.startsWith('!')) return;
         
@@ -58,10 +63,8 @@ class GameController {
         plr.RollTheDice()
     }
 
-}
-
-class MapCreator {
-    constructor() {
-
+    play() {
+        anim()
     }
+
 }
